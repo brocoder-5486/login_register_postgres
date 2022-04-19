@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<div class="container">
+  <h2>LogIn To Create Tasks</h2>
+
+  <ul>
+    <% if(messages.success_msg){ %>
+    <li><%= messages.success_msg %></li>
+    <%}%>
+  </ul>
+
+  <ul>
+    <% if(messages.error) {%>
+    <li><%= messages.error %></li>
+    <% } %>
+  </ul>
+
+  <form action="/users/login" method="post">
+    <div class="input-box">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <div class="input-box">
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      />
+    </div>
+    <div class="input-box button">
+      <input type="Submit" value="LogIn" />
+    </div>
+
+    <div class="text">
+      <h3>Don't have an account? <a href="/users/register">Register now</a></h3>
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer') %>
